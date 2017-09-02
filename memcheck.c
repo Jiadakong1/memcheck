@@ -177,7 +177,7 @@ static int memory_post_test1(unsigned long *start,
 	unsigned long *mem = (unsigned long *) start;
 	unsigned long readback;
 	int ret = 0;
-	printf("memory_test: pattern = %08lX\n" , val);
+	printf("pattern = %08lX\n" , val);
 	for (i = 0; i < size / sizeof (unsigned long); i++) {
 		mem[i] = val;
 	}
@@ -200,7 +200,7 @@ static int memory_post_test2(unsigned long *start, unsigned long size)
 	unsigned long *mem = (unsigned long *) start;
 	unsigned long readback;
 	int ret = 0;
-	printf("memory_test: shift\n");
+	printf("shift\n");
 	for (i = 0; i < size / sizeof (unsigned long); i++) {
 		mem[i] = 1 << (i % 32);
 	}
@@ -222,7 +222,7 @@ static int memory_post_test3(unsigned long *start, unsigned long size)
 	unsigned long *mem = (unsigned long *) start;
 	unsigned long readback;
 	int ret = 0;
-	printf("memory_test: sequence(positive)\n");
+	printf("sequence(positive)\n");
 	for (i = 0; i < size / sizeof (unsigned long); i++) {
 		mem[i] = i;
 	}
@@ -246,7 +246,7 @@ static int memory_post_test4(unsigned long *start, unsigned long size)
 	unsigned long *mem = (unsigned long *) start;
 	unsigned long readback;
 	int ret = 0;
-	printf("memory_test: sequence(negative)\n");
+	printf("sequence(negative)\n");
 	for (i = 0; i < size / sizeof (unsigned long); i++) {
 		mem[i] = ~i;
 	}
@@ -341,7 +341,7 @@ int main(int argc, char const *argv[]) {
 
         if(pstart == NULL)
         {
-            printf("Error: Cannot allocate memory.");
+            printf("Error: Cannot allocate memory.\n");
             return -1;
         }
 
